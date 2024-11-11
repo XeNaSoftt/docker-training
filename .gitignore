@@ -1,0 +1,70 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ignore PhpStorm project files
+.idea/
+
+# Ignore Docker-related files
+*.log
+*.tmp
+tmp/
+.env
+Project-1/.env
+
+# Ignore other common OS files
+.DS_Store  # macOS Finder metadata
+Thumbs.db  # Windows image cache files
+
+# Ignore MySQL socket files
+docker/mysql/*.sock
+
+# Ignore vendor
+projects/Project-1/vendor
+projects/Project-1/composer.lock
+
+# MySQL Database Files
+ibdata1
+ib_buffer_pool
+ibtmp1
+undo_*
+temp_*.ibt
+mysql.ibd
+users.ibd
+binlog.*
+
+# Docker
+docker/mysql/#innodb_redo
+docker/mysql/#innodb_temp
+docker/mysql/mysql
+docker/mysql/performance_schema
+docker/mysql/sys
+docker/mysql/my_db
+docker/mysql/#ib_*.dblwr
+docker/mysql/#innodb_redo/#ib_redo*.tmp
+docker/mysql/auto.cnf
+docker/mysql/ib_buffer_pool
+docker/mysql/ibdata1
+docker/mysql/ibtmp1
+docker/mysql/mysql_upgrade_history
+docker/mysql/binlog.*
+docker/mysql/ca-key.pem
+docker/mysql/ca.pem
+docker/mysql/client-cert.pem
+docker/mysql/client-key.pem
+docker/mysql/mysql.ibd
+docker/mysql/mysql/general_log.*
+docker/mysql/mysql/slow_log.*
+docker/mysql/performance_schema/*
+docker/mysql/private_key.pem
+docker/mysql/public_key.pem
+docker/mysql/server-cert.pem
+docker/mysql/server-key.pem
+Project-2/
+
+
