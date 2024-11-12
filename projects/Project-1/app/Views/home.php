@@ -8,7 +8,9 @@
 
 <?php
 echo '<pre>';
+/** @var array $rows */
 print_r($rows);
+
 
 ?>
 

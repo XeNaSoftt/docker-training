@@ -61,10 +61,10 @@ define('DB_CHARSET', $_ENV['DB_CHARSET']);
         $this->stmt->bindValue($param, $value, $type);
     }
 
-    public function execute(): bool
+    public function execute(array $data = []): bool
     {
         try {
-            return $this->stmt->execute();
+            return $this->stmt->execute($data);
         } catch (PDOException $e) {
             echo "Execution error: " . $e->getMessage();
             return false;
