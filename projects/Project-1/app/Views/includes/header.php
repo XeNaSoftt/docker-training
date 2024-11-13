@@ -11,4 +11,32 @@
     <script src="assets/bootstrap.min.js"></script>
     <title>MyCRM</title>
 </head>
+<style>
+    *{
+        font-family: sans-serif;
+    }
+    a {
+      font-size:14px;
+      font-weight:700;
+      text-decoration: none;
+    }
+    .superNav {
+      font-size:13px;
+    }
+    .form-control {
+      outline:none !important;
+      box-shadow: none !important;
+    }
+    @media screen and (max-width:540px){
+      .centerOnMobile {
+        text-align:center
+      }
+    }
+    .nav-link{
+        font-size: 0.9em;
+    }
+</style>
 <body>
+<?php
+include('navbar.php');
+?>
