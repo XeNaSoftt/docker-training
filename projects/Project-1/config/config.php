@@ -16,7 +16,7 @@ define('DB_CHARSET', $_ENV['DB_CHARSET']);
     /** @var PDOStatement */
     private PDOStatement $stmt;
 
-    public function __construct(){
+    public function connect(){
         $this->host = DB_HOST;
         $this->db = DB_NAME;
         $this->user = DB_USER;
@@ -37,12 +37,16 @@ define('DB_CHARSET', $_ENV['DB_CHARSET']);
             throw new PDOException($e->getMessage());
         }
     }
-
-    public function query($sql) {
+    public function getPdo(): PDO
+    {
+        return $this->pdo;
+    }
+    public function query($sql) : void {
         $this->stmt = $this->pdo->prepare($sql); // Use $pdo after it's initialized
     }
 
-    public function bind($param, $value, $type = null) {
+    public function bind($param, $value, $type = null): void
+    {
         if (is_null($type)) {
             switch (true) {
                 case is_int($value):
@@ -64,7 +68,12 @@ define('DB_CHARSET', $_ENV['DB_CHARSET']);
     public function execute(array $data = []): bool
     {
         try {
-            return $this->stmt->execute($data);
+            if (func_num_args() > 0) {
+                return $this->stmt->execute($data);
+            }
+            else{
+                return $this->stmt->execute();
+            }
         } catch (PDOException $e) {
             echo "Execution error: " . $e->getMessage();
             return false;
@@ -77,4 +86,20 @@ define('DB_CHARSET', $_ENV['DB_CHARSET']);
     public function fetchAll($default = PDO::FETCH_ASSOC) {
         return $this->stmt->fetchAll($default);
     }
+
 }
+
+//$data = [
+//            'name' => 'Ahmet',
+//            'lastname' => 'Polat',
+//            'email' => 'ahmet@gmail.com',
+//            'gender' => 'male',
+//            'school_id' => 5,
+//            'rank' => 1
+//        ];
+//$db = new Database();
+//$db->connect();
+//$conn = $db->getPdo();
+//$sql = "INSERT INTO users (`name`, `lastname`, `email`, `gender`, `school_id`, `rank`) VALUES ('Ahmet','Polat','ahmet@gmail.com','male',5,1)";
+//$stmt = $conn->prepare($sql);
+//$stmt->execute();

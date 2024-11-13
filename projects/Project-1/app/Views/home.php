@@ -10,7 +10,8 @@
 echo '<pre>';
 /** @var array $rows */
 print_r($rows);
-
+/** @var array $user */
+print_r($user);
 
 ?>
 
