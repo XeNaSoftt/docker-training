@@ -7,7 +7,7 @@
       <div class="col-12">
         <div class="mb-5">
           <h2 class="display-5 fw-bold text-center">Sign up</h2>
-          <p class="text-center m-0">Already have an account? <a href="#!" class="link-primary text-decoration-none">Sign in</a></p>
+          <p class="text-center m-0">Already have an account? <a href="login" class="link-primary text-decoration-none">Sign in</a></p>
         </div>
       </div>
     </div>
@@ -15,35 +15,41 @@
       <div class="col-12 col-lg-10 col-xl-8">
         <div class="row gy-5 justify-content-center">
           <div class="col-12 col-lg-5">
-            <form action="#!">
+            <form method="post">
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="firstName" id="firstName" placeholder="First Name" required>
+                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="firstName" id="firstName" placeholder="First Name">
                     <label for="firstName" class="form-label">First Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="lastName" id="lastName" placeholder="Last Name" required>
+                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="lastName" id="lastName" placeholder="Last Name">
                     <label for="lastName" class="form-label">Last Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control border-0 border-bottom rounded-0" name="email" id="email" placeholder="name@example.com" required>
+                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="username" id="username" placeholder="Username">
+                    <label for="username" class="form-label">Username</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control border-0 border-bottom rounded-0" name="email" id="email" placeholder="name@example.com">
                     <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control border-0 border-bottom rounded-0" name="password" id="password" value="" placeholder="Password" required>
+                    <input type="password" class="form-control border-0 border-bottom rounded-0" name="password" id="password" value="" placeholder="Password">
                     <label for="password" class="form-label">Password</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+                    <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree">
                     <label class="form-check-label text-secondary" for="iAgree">
                       I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
                     </label>

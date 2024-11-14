@@ -9,7 +9,7 @@
 <!--    <base href="http://project-1.test/">-->
     <link rel="stylesheet" href="assets/bootstrap.min.css" type="text/css">
     <script src="assets/bootstrap.min.js"></script>
-    <title>MyCRM</title>
+    <title>Nutrition Town</title>
 </head>
 <style>
     *{
@@ -35,6 +35,13 @@
     .nav-link{
         font-size: 0.9em;
     }
+    .superNav .container .row div .text-muted:hover{
+        color: black !important;
+    }
+    .navbar-nav .nav-item .nav-link:hover{
+        background-color: whitesmoke;
+    }
+
 </style>
 <body>
 <?php

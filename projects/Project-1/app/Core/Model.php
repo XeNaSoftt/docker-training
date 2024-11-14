@@ -1,6 +1,9 @@
 <?php
 
 class Model extends Database {
+
+    public $errors = array();
+
     public function __construct() {
         $this->connect();
         if (!property_exists($this, 'table')){

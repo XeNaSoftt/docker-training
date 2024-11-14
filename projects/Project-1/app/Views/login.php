@@ -6,8 +6,8 @@
     <div class="row">
       <div class="col-12">
         <div class="mb-5">
-          <h2 class="display-5 fw-bold text-center">Sign in</h2>
-          <p class="text-center m-0">Don't have an account? <a href="#!">Sign up</a></p>
+          <h2 class="display-5 fw-bold text-center">Login</h2>
+          <p class="text-center m-0">Don't have an account? <a href="signup">Sign up</a></p>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
       <div class="col-12 col-lg-10 col-xl-8">
         <div class="row gy-5 justify-content-center">
           <div class="col-12 col-lg-5">
-            <form action="#!">
+            <form method="post">
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">

@@ -20,4 +20,11 @@ class Controller {
         }
 
     }
+
+    public function redirect($link)
+    {
+        header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/" . trim($link, '/'));
+        die;
+    }
+
 }
