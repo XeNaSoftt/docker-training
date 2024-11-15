@@ -8,7 +8,8 @@
     <link rel="icon" href="data:;base64,=">
 <!--    <base href="http://project-1.test/">-->
     <link rel="stylesheet" href="assets/bootstrap.min.css" type="text/css">
-    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/55c75d5546.js" crossorigin="anonymous"></script>
     <title>Nutrition Town</title>
 </head>
 <style>
@@ -39,7 +40,11 @@
         color: black !important;
     }
     .navbar-nav .nav-item .nav-link:hover{
-        background-color: whitesmoke;
+        background-color: #f8f9fa;
+    }
+    .navbar-nav .dropdown-menu .dropdown-item:active{
+        background-color: #f1f2f3 !important;
+        color: black !important;
     }
 
 </style>

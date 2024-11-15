@@ -5,6 +5,16 @@ use App\Core\Model;
 
 class User extends Model
 {
+    protected array $allowedColumns = [
+        'firstname',
+        'lastname',
+        'username',
+        'email',
+        'password',
+        'userType'
+    ];
+
+
     public function validate($data): bool
     {
 
@@ -17,9 +27,10 @@ class User extends Model
             $this->errors['firstname'] = "Please fill all the required fields";
         }
 
-        if ($data['password'] != $data['password2']) {
+        if ($data['password'] != $data['controlPw']) {
             $this->errors['password'] = "Passwords do not match";
         }
+
 
         if (count($this->errors) == 0) {
             return true;

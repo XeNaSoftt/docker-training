@@ -35,6 +35,17 @@ class Model extends Database {
     public function insert($data): bool
     {
 
+        if (property_exists($this,'allowedColumns')) {
+            foreach ($data as $key => $column) {
+                if(!in_array($key, $this->allowedColumns)){
+                    unset($data[$key]);
+                }
+            }
+        }
+         if (array_key_exists('password', $data)) {
+            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+         }
+
         $keys = array_keys($data);
         $columns = implode(', ', array_map(function($key) {
                                                         return "`$key`"; // Add backticks to escape reserved keywords
@@ -73,7 +84,7 @@ class Model extends Database {
     }
 
 
-    public function where($table,$column, $value) {
+    public function where($table, $column, $value) {
 
         $query = "SELECT * FROM $table WHERE $column = :value";
         $this->query($query);

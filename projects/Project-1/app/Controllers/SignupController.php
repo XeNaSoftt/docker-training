@@ -11,6 +11,8 @@ class SignupController extends Controller {
 
             $user = new User();
             if ($user->validate($_POST)){
+
+                $user->insert($_POST);
                 $this->redirect('login');
             }
             else {

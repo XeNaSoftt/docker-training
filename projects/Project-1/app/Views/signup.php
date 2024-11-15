@@ -1,7 +1,7 @@
 <?php $this->view('includes/header');
 
 /** @var array $errors */
-print_r($errors);
+//print_r($errors);
 
 ?>
 
@@ -14,6 +14,14 @@ print_r($errors);
           <h2 class="display-5 fw-bold text-center">Sign up</h2>
           <p class="text-center m-0">Already have an account? <a href="login" class="link-primary text-decoration-none">Sign in</a></p>
         </div>
+          <?php if (count($errors)>0){ ?>
+          <div class="alert alert-warning alert-dismissible fade show col-md-4 mx-auto text-center" role="alert">
+              <?php foreach ($errors as $error):?>
+              <strong>Error:</strong> <?= $error ?><br>
+              <?php endforeach;?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php } ?>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -24,25 +32,25 @@ print_r($errors);
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="firstname" id="firstname" placeholder="First Name">
+                    <input value="<?php if (isset($_POST['firstname'])) echo ucfirst($_POST['firstname']); ?>" type="text" class="form-control border-0 border-bottom rounded-0" name="firstname" id="firstname" placeholder="First Name">
                     <label for="firstname" class="form-label">First Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="lastname" id="lastname" placeholder="Last Name">
+                    <input value="<?php if (isset($_POST['lastname'])) echo ucfirst($_POST['lastname']); ?>" type="text" class="form-control border-0 border-bottom rounded-0" name="lastname" id="lastname" placeholder="Last Name">
                     <label for="lastname" class="form-label">Last Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="username" id="username" placeholder="Username">
+                    <input value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" type="text" class="form-control border-0 border-bottom rounded-0" name="username" id="username" placeholder="Username">
                     <label for="username" class="form-label">Username</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control border-0 border-bottom rounded-0" name="email" id="email" placeholder="name@example.com">
+                    <input value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" type="email" class="form-control border-0 border-bottom rounded-0" name="email" id="email" placeholder="name@example.com">
                     <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
@@ -54,8 +62,8 @@ print_r($errors);
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control border-0 border-bottom rounded-0" name="password2" id="password2" value="" placeholder="Password">
-                    <label for="password2" class="form-label">Password again</label>
+                    <input type="password" class="form-control border-0 border-bottom rounded-0" name="controlPw" id="controlPw" value="" placeholder="Password">
+                    <label for="controlPw" class="form-label">Password again</label>
                   </div>
                 </div>
                 <div class="col-12">
