@@ -1,4 +1,9 @@
-<?php $this->view('includes/header') ?>
+<?php $this->view('includes/header');
+
+/** @var array $errors */
+print_r($errors);
+
+?>
 
 <!-- Registration 12 - Bootstrap Brain Component -->
 <section class="py-3 py-md-5 py-xl-8">
@@ -19,14 +24,14 @@
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="firstName" id="firstName" placeholder="First Name">
-                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="firstname" id="firstname" placeholder="First Name">
+                    <label for="firstname" class="form-label">First Name</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="lastName" id="lastName" placeholder="Last Name">
-                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control border-0 border-bottom rounded-0" name="lastname" id="lastname" placeholder="Last Name">
+                    <label for="lastname" class="form-label">Last Name</label>
                   </div>
                 </div>
                 <div class="col-12">
@@ -45,6 +50,12 @@
                   <div class="form-floating mb-3">
                     <input type="password" class="form-control border-0 border-bottom rounded-0" name="password" id="password" value="" placeholder="Password">
                     <label for="password" class="form-label">Password</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control border-0 border-bottom rounded-0" name="password2" id="password2" value="" placeholder="Password">
+                    <label for="password2" class="form-label">Password again</label>
                   </div>
                 </div>
                 <div class="col-12">

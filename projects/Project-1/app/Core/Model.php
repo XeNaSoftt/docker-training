@@ -1,4 +1,6 @@
 <?php
+namespace App\Core;
+
 
 class Model extends Database {
 
@@ -7,7 +9,8 @@ class Model extends Database {
     public function __construct() {
         $this->connect();
         if (!property_exists($this, 'table')){
-            $this->table = strtolower($this::class) . "s";
+            $className = str_replace('App\\Models\\', '', get_class($this));
+            $this->table = strtolower($className) . 's'; // Make it lowercase and pluralize
         }
     }
 
